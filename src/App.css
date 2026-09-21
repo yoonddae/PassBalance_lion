@@ -88,8 +88,8 @@ label {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  color: #806d74;
-  font-size: 13px;
+  color: rgb(69, 17, 17);
+  font-size: 16px;
 }
 
 input {
@@ -176,8 +176,9 @@ nav button.active {
 
 .card small {
   display: block;
-  color: #9a858d;
+  color: rgb(69, 17, 17);
   margin-bottom: 10px;
+  font-size: 15px;
 }
 
 .card strong {
