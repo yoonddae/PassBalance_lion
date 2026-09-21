@@ -1,184 +1,299 @@
-.counter {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff7fa;
+  font-family: Arial, sans-serif;
+  color: #30252a;
+}
+
+.app {
+  width: 900px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* 제목 */
+
+header {
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+h1 span {
+  color: #e86b93;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #806d74;
   font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+  font-weight: 700;
 }
 
-.hero {
-  position: relative;
+/* 공통 제목 */
 
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+h2 {
+  margin: 0 0 18px;
 }
 
-#center {
+h3 {
+  margin-top: 0;
+}
+
+/* 입력 박스 */
+
+.inputBox {
+  background: white;
+  padding: 22px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #f5dce5;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.memberBox {
+  padding: 20px 0;
+  border-top: 1px solid #f3e1e7;
+}
+
+.memberTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+label {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  gap: 7px;
+  color: #806d74;
+  font-size: 13px;
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+input {
+  padding: 12px;
+  border: 1px solid #efd5df;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+input:focus {
+  border-color: #e86b93;
+  box-shadow: 0 0 0 3px #fde8ef;
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
+/* 버튼 */
+
+.addButton {
+  border: 0;
+  background: #e86b93;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.deleteButton {
+  border: 0;
+  background: #fff0f5;
+  color: #d85b7f;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 메뉴 */
+
+nav {
   display: flex;
   gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  margin-bottom: 25px;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+nav button {
+  border: 1px solid #f2dce4;
+  background: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #8f7a82;
 }
 
-.ticks {
-  position: relative;
-  width: 100%;
+nav button.active {
+  background: #e86b93;
+  color: white;
+  font-weight: bold;
+  border-color: #e86b93;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+/* 카드 */
+
+.cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 22px;
+  border-radius: 15px;
+  border: 1px solid #f5dce5;
+}
+
+.card small {
+  display: block;
+  color: #9a858d;
+  margin-bottom: 10px;
+}
+
+.card strong {
+  font-size: 24px;
+  color: #3a2b31;
+}
+
+/* 결과 */
+
+.resultBox,
+.costBox {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #f5dce5;
+}
+
+.resultRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 15px 0;
+  border-bottom: 1px solid #f3e1e7;
+}
+
+.resultRow:last-child {
+  border-bottom: 0;
+}
+
+.resultRow span:nth-child(2) {
+  color: #9a858d;
+}
+
+.resultRow b {
+  text-align: right;
+  color: #e05f89;
+}
+
+/* 잔여 서비스 */
+
+.serviceRow {
+  padding: 15px 0;
+  border-bottom: 1px solid #f3e1e7;
+}
+
+.serviceRow:last-child {
+  border-bottom: 0;
+}
+
+.serviceInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.serviceInfo span {
+  color: #9a858d;
+  font-size: 13px;
+}
+
+.progress {
+  height: 9px;
+  background: #f9e5ec;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.progress div {
+  height: 100%;
+  background: #e86b93;
+}
+
+/* 미래 비용 */
+
+.costBox > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #f3e1e7;
+}
+
+.costBox b {
+  color: #d85b7f;
+}
+
+.costBox .plus {
+  color: #42a47b;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #f0dfe5;
+  margin: 15px 0;
+}
+
+.costBox .available {
+  border: 0;
+  background: #fff0f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.available strong {
+  color: #e05f89;
+  font-size: 23px;
+}
+
+/* 모바일 */
+
+@media (max-width: 600px) {
+  .inputs,
+  .cards {
+    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .serviceInfo {
+    flex-direction: column;
+    gap: 5px;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  .resultRow {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .resultRow b {
+    text-align: left;
   }
 }
