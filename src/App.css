@@ -7,6 +7,7 @@ body {
   background: #fff7fa;
   font-family: Arial, sans-serif;
   color: #30252a;
+  color-scheme: light;
 }
 
 .app {
@@ -43,6 +44,7 @@ h1 span {
 
 h2 {
   margin: 0 0 18px;
+  font-weight: 800;
 }
 
 h3 {
@@ -96,6 +98,14 @@ input {
   border-radius: 8px;
   font-size: 15px;
   outline: none;
+  background-color: white;
+  color: #30252a;
+  color-scheme: light;
+}
+
+input::placeholder {
+  color: #a8959d;
+  opacity: 1;
 }
 
 input:focus {
